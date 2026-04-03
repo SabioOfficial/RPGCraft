@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "rpgcraft",
+  "version": "${version}",
+  "name": "RPGCraft",
+  "description": "Make Minecraft into an RPG game!",
+  "authors": [],
+  "contact": {},
+  "license": "GPL-3.0",
+  "icon": "assets/rpgcraft/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "net.sabio.rpgcraft.client.RpgcraftDataGenerator"
+    ],
+    "client": [
+      "net.sabio.rpgcraft.client.RpgcraftClient"
+    ],
+    "main": [
+      "net.sabio.rpgcraft.Rpgcraft"
+    ]
+  },
+  "mixins": [
+    "rpgcraft.mixins.json",
+    {
+      "config": "rpgcraft.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
